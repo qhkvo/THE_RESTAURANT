@@ -1,0 +1,31 @@
+html
+    head
+        title Welcome!
+        style.
+            body {
+                background-image: url(images/homeBackground.png);
+            }
+            h1 {
+                color: white;
+                text-align: center;
+                font-size: 150%;
+            }
+            .center-screen {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                min-height: 100vh;
+                color: white;
+                font-size: 300%
+                }
+             
+    body
+        include ../partials/header
+        if(user)
+            div(class="center-screen")
+                h1 Welcome to the Restaurants #{username}!
+        else
+            div(class="center-screen")
+                h1 Welcome to the Restaurants!
+            

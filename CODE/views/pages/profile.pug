@@ -1,0 +1,35 @@
+html
+    head
+        title Profile Page
+    body
+        include ../partials/header
+        h1 Profile for #{user.username}
+        if (ownProfile)
+            h3 Privacy: 
+            if (user.privacy)
+                //- If private
+                input(type="radio", name="privacy", value="false")
+                | Public
+                input(type="radio", name="privacy", id="private", checked)
+                | Private
+                br
+                br
+                button(onclick="updatePrivacy()") Save
+            else
+                //- If public
+                input(type="radio", name="privacy", value="false", checked)
+                | Public
+                input(type="radio", name="privacy", id="private")
+                | Private
+                br
+                br
+                button(onclick=`updatePrivacy()`) Save
+        br
+        h2 Order History
+        //- Link of all the orderID
+        each order in orders
+            a(href="/orders/" + order) #{order}
+            br
+
+        script
+            include ../../public/profile.js

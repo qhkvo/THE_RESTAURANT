@@ -1,0 +1,18 @@
+html
+    head
+        title Order
+        
+    body
+        include ../partials/header
+
+        h1 Order #{order._id.toString()}
+        h2 Username: #{order.username}
+        h2 Restaurant Name: #{order.restaurantName}
+        h2 Order Content:
+        each item in order.order
+            p #{item.name} (#{item.quantity})
+        br
+        p Subtotal: #{order.subtotal}
+        p Tax: #{order.tax}
+        p Delivery Fee: #{order.fee}
+        p Total: #{order.total}

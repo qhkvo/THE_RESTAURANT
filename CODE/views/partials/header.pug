@@ -1,0 +1,24 @@
+div#header
+    a(href="/" style="color: burlywood; font-size: 130%") Home
+    | #{"  "}
+    a(href="/users" style="color: burlywood; font-size: 130%") Users
+    | #{"  "}
+
+    if (session.loggedin)
+        //-Check if username matches the one is viewing too !!!!
+        a(href="/orderform" style="color: burlywood; font-size: 130%") Order Form
+        | #{"  "}
+        a(href=`/users/${session.userID}` style="color: burlywood; font-size: 130%") Profile
+        | #{"  "}
+        a(href="/logout" style="color: burlywood; font-size: 130%") Logout
+    else
+        a(href="/registration" style="color: burlywood; font-size: 130%") Registration
+        p(style="color: white") Username 
+            input#username(type="textbox" name='name')
+        p(style="color: white") Password 
+            input#password(type="textbox" name='pass')
+        button#login(onclick="login()") Login
+
+    script 
+        include ../../public/header.js
+        

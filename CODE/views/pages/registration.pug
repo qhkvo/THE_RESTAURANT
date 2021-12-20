@@ -1,0 +1,21 @@
+html
+    head
+        title Registration Page
+        style.
+            body {
+                background-image: url(images/homeBackground.png);
+            }
+            p { color: white;}
+            h1 { color: burlywood;}
+
+    body
+        include ../partials/header
+        h1 Sign Up
+        p Username 
+            input#regUsername(type="textbox" name='username')
+        p Password 
+            input#regPassword(type="textbox" name='password')
+        button#signUp(type="submit" onclick="signUp()") Register
+    
+        script
+            include ../../public/registration.js
